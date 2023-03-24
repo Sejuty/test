@@ -1,0 +1,100 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, text, boolean, number, select, radios } from '@storybook/addon-knobs';
+
+import { SCSelectV3 } from '../../components';
+
+<Meta title="Select V3" component={SCSelectV3} />
+
+# Select
+
+## Displays a select that will help users in taking an action. Use a button for enabling/disabling action to specific users
+
+## Basic Select (where multiple=false and searchable=false)
+<Preview withToolbar>
+  <Story name="Single Select">
+    <div className="flex flex-col">
+      <div className="my-4">
+        <SCSelectV3
+          title="Basic Select"
+          options={[
+            { id: 1, label: 'Pickup' },
+            { id: 2, label: 'Delivery' },
+          ]}
+          label="label"
+          trackBy="id"
+        />
+      </div>
+      <div className="my-4">
+        <SCSelectV3
+          title="Select with hint"
+          className="my-4"
+          options={[
+            { id: 1, label: 'Pickup' },
+            { id: 2, label: 'Delivery' },
+          ]}
+          label="label"
+          trackBy="id"
+          hint="Hello World"
+        />
+      </div>
+      <div className="my-4">
+        <SCSelectV3
+          title="Select with disabled item"
+          className="mb-2"
+          disabledItemKey="$itemIsDisabled"
+          options={[
+            { id: 1, label: 'Pickup' },
+            { id: 2, label: 'Delivery', $itemIsDisabled: true },
+            { id: 3, label: 'Dine In' },
+          ]}
+          label="label"
+          trackBy="id"
+        />
+      </div>
+    </div>
+  </Story>
+</Preview>
+
+<Props of={SCSelectV3} />
+
+### Group select (where multiple=false and searchable=true)
+  <Story name="Group Select">
+    <div>
+      <SCSelectV3
+        title="Group Select"
+        className="mb-2"
+        options={[{
+          "id": 1,
+          "name": "In-store",
+          "image": "",
+          "sources": [
+            {
+              "id": 6,
+              "name": "In-store",
+              "image": ""
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Own Channels",
+          "image": "",
+          "sources": [
+            {
+              "id": 7,
+              "name": "Call",
+            },
+            {
+              "id": 8,
+              "name": "Website",
+            }
+          ]
+        }]}
+        label="name"
+        trackBy="id"
+        groupSelect={true}
+        groupLabel="name"
+        groupValues="sources"
+      />
+    </div>
+  </Story>

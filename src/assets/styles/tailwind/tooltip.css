@@ -1,0 +1,142 @@
+.sc-tooltip {
+  width: max-content;
+
+  @apply absolute;
+  @apply z-50;
+}
+
+.sc-tooltip.right {
+  margin-left: 10px;
+  left: 100%;
+}
+
+.sc-tooltip.left {
+  margin-right: 10px;
+  right: 100%;
+}
+
+.sc-tooltip.top,
+.sc-tooltip.bottom {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sc-tooltip.right,
+.sc-tooltip.left {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sc-tooltip.top {
+  bottom: 115%;
+}
+
+.sc-tooltip.bottom {
+  margin-top: 5px;
+}
+
+.sc-tooltip .sc-tooltip-arrow {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  transform: rotate(45deg) translateX(-50%);
+  z-index: -1;
+}
+
+.sc-tooltip.right .sc-tooltip-arrow {
+  top: 50%;
+  left: -3px;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.sc-tooltip.top .sc-tooltip-arrow {
+  top: auto;
+  bottom: -6px;
+  left: 50%;
+}
+
+.sc-tooltip.left .sc-tooltip-arrow {
+  top: 50%;
+  right: -3px;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.sc-tooltip.bottom .sc-tooltip-arrow {
+  left: 50%;
+
+  @apply top-0;
+}
+
+.sc-tooltip .sc-tooltip-label {
+  max-width: 200px;
+  padding: 3px 8px;
+
+  @apply rounded;
+  @apply text-center;
+  @apply block;
+}
+
+.sc-tooltip.on {
+  @apply block;
+}
+
+.sc-tooltip.off {
+  @apply hidden;
+}
+
+/* Primary Tooltip Styles */
+.sc-tooltip-primary,
+.sc-tooltip-arrow-primary {
+  @apply bg-primary;
+  @apply text-white;
+}
+
+.sc-tooltip-primary-outline {
+  @apply border-primary;
+  @apply text-primary;
+}
+
+.sc-tooltip-arrow-primary-outline {
+  @apply bg-primary;
+}
+
+/* Success Tooltip Styles */
+.sc-tooltip-success,
+.sc-tooltip-arrow-success {
+  @apply bg-green;
+  @apply text-white;
+}
+
+.sc-tooltip-success-outline {
+  @apply border-green;
+  @apply text-green;
+}
+
+.sc-tooltip-arrow-success-outline {
+  @apply bg-green;
+}
+
+/* Danger Tooltip Styles */
+.sc-tooltip-danger,
+.sc-tooltip-arrow-danger {
+  @apply bg-red;
+  @apply text-white;
+}
+
+.sc-tooltip-danger-outline {
+  @apply border-red;
+  @apply text-red;
+}
+
+.sc-tooltip-label.sc-tooltip-outline {
+  @apply bg-white;
+  @apply border;
+}
+
+.sc-tooltip-arrow-danger-outline {
+  @apply bg-red;
+}
+
+.react-tooltip {
+  padding: 4px 10px !important;
+}

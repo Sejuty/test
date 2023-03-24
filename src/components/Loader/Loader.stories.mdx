@@ -1,0 +1,37 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, number, text, select } from '@storybook/addon-knobs';
+
+import { SCLoader } from '../../components';
+
+<Meta title="Loader" component={SCLoader} />
+
+# Loader
+
+## Displays a loader
+
+<Preview withToolbar>
+    <Story name="Basic">
+        <SCLoader
+            lineWidth={5}
+            diameter={50}
+        />
+    </Story>
+</Preview>
+
+<Props of={SCLoader} />
+
+### Playground
+
+Experiment with this story with Knobs addon in Canvas mode.
+
+<Story name="Playground" decorators={[withKnobs]}>
+    <SCLoader
+        spinTime={text('spinTime', '2s')}
+        lineWidth={number('lineWidth', 5)}
+        diameter={number('diameter', 50)}
+        text={text('text', 'Loading...')}
+        textClass={text('textClass', 'mr-4 text-primary text-lg')}
+        textPosition={select('textPosition', ['left', 'right'], 'left')}
+        container={text('container', '')}
+    />
+</Story>

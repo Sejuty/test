@@ -1,0 +1,114 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, text, boolean, radios } from '@storybook/addon-knobs';
+
+import { SCSidebar, SCSidebarItem, SCSidebarDropdown, SCSidebarHeader } from '../../components';
+
+<Meta title="Sidebar" component={SCSidebar} />
+
+# Sidebar
+
+## Displays a sidebar that will help users navigate through different projects. Wrap it in a NavLink for routing to different places
+
+### Props
+
+<strong>Props for Sidebar</strong>
+<Props of={SCSidebar} />
+
+<strong>Props for SidebarMenuItem</strong>
+<Props of={SCSidebarItem} />
+
+<strong>Props for SidebarHeader</strong>
+<Props of={SCSidebarHeader} />
+
+### Basic Sidebar
+
+<Preview withToolbar>
+    <Story name="Basic">
+        <SCSidebar>
+            <SCSidebarItem iconClass="icon-done-outline text-sm" title="Item 1" />
+            <SCSidebarItem iconClass="icon-polygon-1 text-sm" title="Item 2" />
+            <SCSidebarItem iconClass="icon-done-outline text-sm" title="Item 3" />
+        </SCSidebar>
+    </Story>
+</Preview>
+
+### Sidebar with dropdown
+
+<Preview withToolbar>
+    <Story name="Dropdown">
+        <SCSidebar width="180px">
+            <SCSidebarItem iconClass="icon-done-outline text-sm" title="Item 1" />
+            <SCSidebarDropdown iconClass="icon-done-outline text-sm" subIconClass="icon-arrow-right text-sm" dropdownTitle="Dropdown">
+                <SCSidebarItem iconClass="icon-done-outline text-sm" title="Sub Item 1" isFirstLevel={true} />
+                <SCSidebarItem iconClass="icon-done-outline text-sm" title="Sub Item 2" isFirstLevel={true} />
+                    <SCSidebarDropdown iconClass="icon-done-outline text-sm" subIconClass="icon-arrow-right text-sm" dropdownTitle="Dropdown 2" isFirstLevel={true}>
+                        <SCSidebarItem iconClass="icon-done-outline text-sm" title="Sub Item 1" isSecondLevel={true} />
+                        <SCSidebarItem iconClass="icon-done-outline text-sm" title="Sub Item 2" isSecondLevel={true} />
+                        <SCSidebarItem iconClass="icon-done-outline text-sm" title="Sub Item 2" isSecondLevel={true}/>
+                    </SCSidebarDropdown>
+                <SCSidebarItem iconClass="icon-done-outline text-sm" title="Sub Item 2" />
+            </SCSidebarDropdown>
+            <SCSidebarItem iconClass="icon-done-outline text-sm" title="Item 5" />
+        </SCSidebar>
+    </Story>
+</Preview>
+
+<Preview withToolbar>
+    <Story name="Pinable">
+    <SCSidebar width="200px" pinable={false} collapsedWidth="44px">
+        <SCSidebarHeader headerClass="p-4" pinClass={`${pinable ? "sc-pinable" : ""} w-4 h-4 rounded-full bg-white`}>
+            ShadowChef 
+        </SCSidebarHeader>
+       <SCSidebarItem iconClass="icon-done-outline text-sm" title="Item 1" />
+        <SCSidebarItem iconClass="icon-polygon-1 text-sm" title="Item 2" />
+        <SCSidebarItem iconClass="icon-done-outline text-sm" title="Item 3" />
+        <SCSidebarItem iconClass="icon-polygon-1 text-sm" title="Item 4" />
+        <SCSidebarItem iconClass="icon-done-outline text-sm" title="Item 5" />
+    </SCSidebar>
+</Story>
+</Preview>
+
+### Dynamically set value of Checkbox
+<div className="p-4 bg-primary-dark text-grey text-sm rounded">this.someRefToInput.current.setValue(true);</div>
+
+### Collapsible Sidebar
+
+<Preview withToolbar>
+    <Story name="Collapsible">
+        <SCSidebar collapsible={true} collapsedWidth="44px">
+        <SCSidebarItem iconClass="icon-done-outline text-sm" title="Item 1" />
+            <SCSidebarItem iconClass="icon-polygon-1 text-sm" title="Item 2" />
+            <SCSidebarItem iconClass="icon-done-outline text-sm" title="Item 3" />
+            <SCSidebarItem iconClass="icon-polygon-1 text-sm" title="Item 4" />
+            <SCSidebarItem iconClass="icon-done-outline text-sm" title="Item 5" />
+        </SCSidebar>
+    </Story>
+</Preview>
+
+### Playground
+
+Experiment with this story with Knobs addon in Canvas mode.
+
+<Story name="Playground" decorators={[withKnobs]}>
+    <SCSidebar pinable={boolean('pinable', false)} collapsible={boolean('collapsible', false)} collapsedWidth={text("collapsedWidth", "44px")} width={text("width", "240px")}>
+        <SCSidebarHeader headerClass="p-4" pinClass={`${pinable ? "sc-pinable" : ""} w-4 h-4 rounded-full bg-white`}>
+            ShadowChef 
+        </SCSidebarHeader>
+       <SCSidebarItem iconClass={text("iconClass", "icon-done-outline text-sm")} title={text("title", "Item 1")} />
+        <SCSidebarItem iconClass="icon-polygon-1 text-sm" title="Item 2" />
+        <SCSidebarItem iconClass="icon-done-outline text-sm" title="Item 3" />
+        <SCSidebarItem iconClass="icon-polygon-1 text-sm" title="Item 4" />
+        <SCSidebarItem iconClass="icon-done-outline text-sm" title="Item 5" />
+        <SCSidebarDropdown iconClass="icon-done-outline text-sm" subIconClass={text("subIconClass", "icon-arrow-right text-sm")} dropdownTitle={text("dropdownTitle", "Dropdown")}>
+            <SCSidebarItem iconClass="icon-done-outline text-sm" title="Sub Item 1" isFirstLevel={boolean("isFirstLevel", true)} />
+            <SCSidebarItem iconClass="icon-done-outline text-sm" title="Sub Item 2" isFirstLevel={boolean("isFirstLevel", true)} />
+                <SCSidebarDropdown iconClass="icon-done-outline text-sm" subIconClass="icon-arrow-right text-sm" dropdownTitle="Dropdown 2" isFirstLevel={boolean("isFirstLevel", true)}>
+                    <SCSidebarItem iconClass="icon-done-outline text-sm" title="Sub Item 1" isSecondLevel={boolean("isSecondLevel", true)} />
+                    <SCSidebarItem iconClass="icon-done-outline text-sm" title="Sub Item 2" isSecondLevel={boolean("isSecondLevel", true)} />
+                    <SCSidebarItem iconClass="icon-done-outline text-sm" title="Sub Item 2" isSecondLevel={boolean("isSecondLevel", true)}/>
+                </SCSidebarDropdown>
+            <SCSidebarItem iconClass="icon-done-outline text-sm" title="Sub Item 2" />
+        </SCSidebarDropdown>
+    </SCSidebar>
+    
+</Story>

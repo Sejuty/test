@@ -1,0 +1,37 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, array, number } from '@storybook/addon-knobs';
+
+import { SCPagination } from '../../components';
+
+<Meta title="Pagination" component={SCPagination} />
+
+# Pagination
+
+## Displays a pagination that will help users in taking an action. Use a button for attributing actions to specific users
+
+<Preview withToolbar>
+    <Story name="Basic">
+        <SCPagination
+            size={5}
+            sizes={[5, 10, 20, 50]}
+            total={100}
+            page={1}
+        />
+    </Story>
+</Preview>
+
+<Props of={SCPagination} />
+
+
+### Playground
+
+Experiment with this story with Knobs addon in Canvas mode.
+
+<Story name="Playground" decorators={[withKnobs]}>
+    <SCPagination
+        size={select('size', [10, 20, 50], 10)}
+        sizes={array('sizes', [10, 20, 50])}
+        total={number('total', 100)}
+        page={number('page', 1)}
+    />
+</Story>

@@ -1,0 +1,25 @@
+.sc-loader {
+    @apply rounded-full;
+
+    border-style: solid;
+    border-top-color: theme('colors.primary.dark') !important;
+    border-bottom-color: theme('colors.grey.DEFAULT') !important;
+    border-left-color: theme('colors.grey.DEFAULT') !important;
+    border-right-color: theme('colors.grey.DEFAULT') !important;
+}
+
+.sc-loader-container {
+    @apply left-0;
+    @apply top-0;
+    @apply flex;
+    @apply justify-center;
+    @apply items-center;
+    @apply z-10;
+
+    background-color: rgba(255, 255, 255, .2);
+}
+
+@keyframes loader-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

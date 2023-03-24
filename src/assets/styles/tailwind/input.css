@@ -1,0 +1,72 @@
+.sc-input-container {
+    @apply flex;
+    @apply flex-col;
+}
+
+.sc-input-container legend,
+.sc-input-container label {
+    font-size: 14px;
+    line-height: 16px;
+
+    @apply text-grey-darker;
+    @apply capitalize;
+    @apply cursor-pointer;
+}
+
+.sc-input-container hint {
+    font-size: 10px;
+    line-height: 12px;
+
+    @apply text-primary-light;
+    @apply pl-2;
+}
+.sc-input-container .sc-input-hint {
+    @apply text-primary-light;
+    @apply text-xs;
+}
+
+
+.sc-input-container input {
+    font-size: 12px;
+    line-height: 16px;
+    padding: 10px 5px;
+    margin: 8px 0px;
+    
+    @apply w-full;
+    @apply border-b;
+    @apply border-grey-dark;
+    @apply text-black;
+}
+
+.sc-input-container input:focus {
+    @apply border-grey-darker;
+    @apply outline-none;
+}
+
+.sc-input-container input:read-only {
+    @apply cursor-not-allowed;
+    @apply bg-grey;
+}
+
+.sc-input-container.sc-input-error label,
+.sc-input-container.sc-input-error legend {
+    @apply text-red-light;
+}
+
+.sc-input-container.sc-input-error input {
+    @apply text-red-light;
+    @apply border-red-light;
+}
+
+.sc-input-container.sc-input-error input:read-only {
+    background: rgba(230, 106, 106, 0.2);
+}
+
+.sc-input-container.sc-input-error input::placeholder {
+    @apply text-red-light;
+    @apply opacity-100;
+}
+
+.sc-input-container.sc-input-error .sc-input-hint {
+    @apply text-red-light;
+}

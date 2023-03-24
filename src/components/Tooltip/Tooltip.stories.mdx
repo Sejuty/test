@@ -1,0 +1,123 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, text, boolean, number, select, radios } from '@storybook/addon-knobs';
+
+import { SCTooltip, SCButton } from '../../components';
+
+<Meta title="Tooltip" component={SCTooltip} />
+
+# Tooltip
+
+## Displays a tooltip that will help users in taking an action.
+
+<Preview withToolbar>
+    <Story name="Basic">
+        <SCTooltip content="Click trigger Tooltip" position="right" trigger="click" autoCloseTime={5000}>
+            Click Me!
+        </SCTooltip>
+    </Story>
+</Preview>
+
+<Props of={SCTooltip} />
+
+### Content variant
+
+You can use any kinda tag. Such as: `div`, `p`, `h1`
+
+<Story name="Content">
+  <div>
+    <SCTooltip content="Tooltip" position="right" trigger="click" autoCloseTime={5000}>
+        Click Me!
+    </SCTooltip>
+    <SCTooltip content="<h1>Tooltip with h1 tag</h1>" position="bottom" trigger="click" autoCloseTime={5000}>
+        Click Me!
+    </SCTooltip>
+    <SCTooltip content="<p>This is tooltip's large content with p</p>" position="right" trigger="click" autoCloseTime={5000}>
+        Click Me!
+    </SCTooltip>
+  </div>
+</Story>
+
+### Variant
+
+6 variants are supported: `primary`, `primary-outline`, `success`, `success-outline`, `danger`, `danger-outline`
+
+<Story name="Variant">
+  <div>
+    <SCTooltip content="Tooltip" position="bottom" trigger="click" autoCloseTime={5000} variant="primary">
+        Primary
+    </SCTooltip>
+    <SCTooltip content="Tooltip" position="bottom" trigger="click" autoCloseTime={5000} variant="primary-outline">
+        Primary Outline
+    </SCTooltip>
+    <SCTooltip content="Tooltip" position="bottom" trigger="click" autoCloseTime={5000} variant="success">
+        Success
+    </SCTooltip>
+    <SCTooltip content="Tooltip" position="bottom" trigger="click" autoCloseTime={5000} variant="success-outline">
+        Success Outline
+    </SCTooltip>
+    <SCTooltip content="Tooltip" position="bottom" trigger="click" autoCloseTime={5000} variant="danger">
+        Danger
+    </SCTooltip>
+    <SCTooltip content="Tooltip" position="bottom" trigger="click" autoCloseTime={5000} variant="danger-outline">
+        Danger Outline
+    </SCTooltip>
+  </div>
+</Story>
+
+### Button
+
+<Story name="Button">
+  <div class="mt-6">
+    <SCTooltip content="Tooltip" position="top" trigger="hover" autoCloseTime={5000} variant="primary">
+        <SCButton
+            label="Top"
+            variant="success"
+            size="md"
+            className="rounded"
+        />
+    </SCTooltip>
+    <SCTooltip content="Tooltip" position="bottom" trigger="hover" autoCloseTime={5000} variant="primary">
+        <SCButton
+            label="Bottom"
+            variant="success"
+            size="md"
+            className="rounded"
+        />
+    </SCTooltip>
+    <SCTooltip content="Tooltip" position="left" trigger="hover" autoCloseTime={5000} variant="primary">
+        <SCButton
+            label="Left"
+            variant="success"
+            size="md"
+            className="rounded"
+        />
+    </SCTooltip>
+    <SCTooltip content="Tooltip" position="right" trigger="hover" autoCloseTime={5000} variant="primary">
+        <SCButton
+            label="Right"
+            variant="success"
+            size="md"
+            className="rounded"
+        />
+    </SCTooltip>
+  </div>
+</Story>
+
+### Playground
+
+Experiment with this story with Knobs addon in Canvas mode.
+
+<Story name="Playground" decorators={[withKnobs]}>
+    <div className="flex justify-center items-center h-screen">
+        <SCTooltip 
+            content={text("content", "Hello Tooltip")}
+            position={select("position", ["top","bottom","left","right"])} 
+            trigger={select("trigger", ["click", "hover"])} 
+            autoCloseTime={number("autoCloseTime", 5000)}
+            variant={select('variant', ['primary', 'primary-outline', 'success', 'success-outline', 'danger', 'danger-outline'], 'primary')}
+            tagName={text("tagName", "span")}
+        >
+            {text("children", "Click me!")}
+        </SCTooltip>
+    </div>
+</Story>

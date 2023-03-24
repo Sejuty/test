@@ -1,0 +1,61 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, text, boolean, radios } from '@storybook/addon-knobs';
+
+import { SCInput } from '../../components';
+
+<Meta title="Input" component={SCInput} />
+
+# Input
+
+## Displays a switch that will help users in taking an action. Use a button for enabling/disabling action to specific users
+
+<Preview withToolbar>
+    <Story name="Basic">
+        <SCInput
+            label="Shadow Chef"
+            id="helloWorld"
+            name="helloName"
+            type="password"
+            inputClass="border-b"
+        />
+    </Story>
+</Preview>
+
+### Dynamically set value of Checkbox
+<div className="p-4 bg-primary-dark text-grey text-sm rounded">this.someRefToInput.current.setValue(true);</div>
+
+<Props of={SCInput} />
+
+### Types
+
+5 types are supported: `text`, `email`, `password`, `number`, `phone`
+
+<Preview withToolbar>
+    <Story name="Types">
+        <div>
+            <SCInput label="Text" type="text" inputClass="border" value="text" className="mb-4" />
+            <SCInput label="Email" type="email" inputClass="border" value="testuser@email.com" className="mb-4" />
+            <SCInput label="Password" type="password" inputClass="border" value="ThisIsPassword" className="mb-4" />
+            <SCInput label="Number" type="number" inputClass="border" value="123" className="mb-4" />
+            <SCInput label="Phone" type="phone" inputClass="border" value="01700000000" className="mb-4" />
+        </div>
+    </Story>
+</Preview>
+
+### Playground
+
+Experiment with this story with Knobs addon in Canvas mode.
+
+<Story name="Playground" decorators={[withKnobs]}>
+    <SCInput
+        value={text('value', 'My value')}
+        label={text('label', 'Input Custom Label')}
+        placeholder={text('placeholder', 'This is an input placeholder')}
+        hint={text('hint', 'This is our hint')}
+        helpText={text('helpText', 'This is our help text')}
+        type="{radios('type', {text: 'Text', 'email': 'Email', password: 'Password', number: 'Number', phone: 'Phone'}), 'text'}"
+        inputClass={text('inputClass', 'border')}
+        readOnly={boolean('readOnly', false)}
+        hasError={boolean('hasError', false)}
+    />
+</Story>

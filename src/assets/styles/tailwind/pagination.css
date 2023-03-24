@@ -1,0 +1,62 @@
+.sc-pagination-container {
+    @apply flex;
+}
+
+.sc-pagination-container .sc-pagination-size-selector {
+    @apply flex;
+    @apply justify-center;
+}
+
+.sc-pagination-container .sc-pagination-size-selector .sc-select-container,
+.sc-pagination-container .sc-pagination-size-selector .sc-selector {
+    min-width: 0;
+    width: 55px;
+}
+
+.sc-pagination-container .sc-pagination-numbers {
+    @apply flex;
+    @apply flex-1;
+    @apply flex-col;
+    @apply items-end;
+}
+
+.sc-pagination-container .sc-pagination-numbers .sc-pagination-number {
+    @apply flex;
+    @apply bg-primary;
+    @apply mr-2;
+    @apply items-center;
+    @apply text-sm;
+    @apply justify-center;
+}
+
+.sc-pagination-container .sc-pagination-numbers .sc-pagination-number.sc-btn-auto {
+    min-width: 25px;
+    padding: 0 0.5rem !important;
+}
+
+.sc-pagination-container .sc-pagination-numbers .sc-pagination-number.is-active {
+    @apply bg-primary-dark;
+}
+
+.sc-pagination-container .sc-pagination-numbers .sc-pagination-number:disabled {
+    @apply cursor-not-allowed;
+}
+
+.sc-pagination-container .sc-pagination-numbers .sc-pagination-number:last-child {
+    @apply mr-0;
+}
+
+.sc-pagination-container .sc-pagination-numbers .sc-pagination-number:hover {
+    @apply bg-primary-dark;
+}
+
+.sc-pagination-container .sc-pagination-numbers .sc-number-range {
+    @apply text-primary;
+    @apply underline;
+    @apply font-bold;
+    @apply mx-2;
+}
+
+.sc-pagination-container .sc-pagination-numbers .sc-pagination-number i {
+    font-size: 17px;
+}

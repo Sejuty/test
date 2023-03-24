@@ -1,0 +1,158 @@
+.sc-btn {
+    @apply px-4;
+    @apply text-white;
+    @apply rounded;
+}
+
+.sc-btn:focus {
+    @apply outline-none;
+}
+
+.sc-btn:disabled {
+    @apply cursor-not-allowed;
+    @apply opacity-50;
+}
+
+/* Button Icon styles */
+.sc-btn i {
+    font-size: 14px;
+}
+
+.sc-btn-xl i {
+    font-size: 20px;
+}
+
+/* Button Size Styles */
+.sc-btn-auto,
+.sc-btn-sm {
+    height: 28px;
+    font-size: 10px;
+    line-height: 12px;
+}
+.sc-btn-auto {
+    @apply px-4;
+    @apply w-auto;
+}
+
+.sc-btn-sm {
+    width: 80px;
+    @apply px-1;
+}
+
+.sc-btn-md,
+.sc-btn-lg, .sc-date-range-picker-btn-lg {
+    height: 36px;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.sc-btn-md {
+    width: 109px;
+}
+
+.sc-btn-lg {
+    width: 158px;
+}
+
+.sc-date-range-picker-btn-lg {
+    width: 200px;
+}
+
+.sc-btn-xl {
+    height: 40px;
+    width: 210px;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+/* Primary Button Styles */
+.sc-btn-primary {
+    @apply bg-primary;
+}
+
+.sc-btn-primary-outline {
+    @apply bg-white;
+    @apply border;
+    @apply border-primary;
+    @apply text-primary;
+}
+
+.sc-btn-primary:hover {
+    @apply bg-primary-dark;
+}
+
+.sc-btn-primary-outline:hover {
+    @apply bg-primary;
+    @apply text-white;
+}
+
+/* Success Button Styles */
+.sc-btn-success {
+    @apply bg-green;
+}
+
+.sc-btn-success-outline {
+    @apply bg-white;
+    @apply border;
+    @apply border-green;
+    @apply text-green;
+}
+
+.sc-btn-success:hover {
+    @apply bg-green-dark;
+}
+
+.sc-btn-success:active {
+    @apply bg-green;
+}
+
+.sc-btn-success-outline:hover {
+    @apply bg-green;
+    @apply text-white;
+}
+
+/* Danger Button Styles */
+.sc-btn-danger {
+    @apply bg-red;
+}
+
+.sc-btn-danger-outline {
+    @apply bg-white;
+    @apply border;
+    @apply border-red;
+    @apply text-red;
+    
+}
+
+.sc-btn-danger:hover {
+    @apply bg-red-dark;
+}
+
+.sc-btn-danger-outline:hover {
+    @apply bg-red;
+    @apply text-white;
+}
+
+.sc-btn-primary:active {
+    @apply bg-primary;
+}
+
+.sc-btn-success:active {
+    @apply bg-green;
+}
+
+.sc-btn-danger:active {
+    @apply bg-red;
+}
+
+.sc-btn-primary-outline:active {
+    @apply bg-primary-dark;
+}
+
+.sc-btn-success-outline:active {
+    @apply bg-green-dark;
+}
+
+.sc-btn-danger-outline:active {
+    @apply bg-red-dark;
+}

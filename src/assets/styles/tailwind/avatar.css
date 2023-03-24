@@ -1,0 +1,56 @@
+.sc-avatar {
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+}
+
+.sc-avatar i {
+    @apply text-primary-dark;
+}
+
+
+.sc-avatar.sc-avatar-xs {
+    width: 24px;
+    height: 24px;
+}
+
+.sc-avatar.sc-avatar-xs i {
+    font-size: 12px;
+    line-height: 24px;
+}
+
+.sc-avatar.sc-avatar-sm {
+    width: 48px;
+    height: 48px;
+}
+
+.sc-avatar.sc-avatar-sm i {
+    font-size: 18px;
+    line-height: 48px;
+}
+
+.sc-avatar.sc-avatar-md {
+    width: 64px;
+    height: 64px;
+}
+
+.sc-avatar.sc-avatar-md i {
+    font-size: 25px;
+    line-height: 64px;
+}
+
+.sc-avatar.sc-avatar-lg {
+    width: 80px;
+    height: 80px;
+}
+
+.sc-avatar.sc-avatar-lg i {
+    font-size: 40px;
+    line-height: 80px;
+}
+
+.sc-avatar img {
+    @apply w-full;
+    @apply h-full;
+    @apply object-cover;
+}

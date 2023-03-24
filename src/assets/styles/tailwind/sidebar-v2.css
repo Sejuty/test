@@ -1,0 +1,50 @@
+.pro-sidebar {
+  padding: 18px 12px;
+}
+
+.pro-sidebar > .pro-sidebar-inner {
+  border-radius: 8px;
+  background: linear-gradient(180deg, #FF512F 0, #DD2476 100%);
+  color: #FFFFFF;
+}
+
+.pro-sidebar > .pro-sidebar-inner > .pro-sidebar-layout .pro-sidebar-header {
+  border-bottom: none;
+}
+
+.pro-sidebar .pro-menu .pro-menu-item {
+  margin-bottom: 8px;
+  line-height: 20px;
+}
+
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item {
+  align-items: center;
+  padding: 0;
+}
+
+.pro-sidebar .pro-menu .pro-menu-item.active,
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item:hover {
+  background: #FFFFFF !important;
+  color: #FF512F !important;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  width: 90%;
+}
+
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item > .pro-icon-wrapper {
+  margin-right: 0;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  line-height: 44px;
+}
+
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item > .pro-icon-wrapper .pro-icon {
+  font-size: 18px;
+  line-height: 44px;
+  margin-top: 1px;
+}
+
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item > .pro-item-content {
+  margin-left: 10px;
+}

@@ -1,0 +1,52 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, text, boolean, radios } from '@storybook/addon-knobs';
+
+import { SCCheckbox } from '../../components';
+
+<Meta title="Checkbox" component={SCCheckbox} />
+
+# Checkbox
+
+Displays a button that will help users in taking an action. Use a button for attributing actions to specific users
+
+### Basic Usage
+
+<Preview withToolbar>
+    <Story name="Basic">
+        <SCCheckbox label="I am a Checkbox" />
+    </Story>
+</Preview>
+
+### Dynamically set value of Checkbox
+<div className="p-4 bg-primary-dark text-grey text-sm rounded">this.someRefToCheckbox.current.setValue(true);</div>
+
+<Props of={SCCheckbox} />
+
+
+### Size
+
+3 sizes are supported: `sm`, `md`, `lg`
+
+<Story name="Size">
+  <div className="flex flex-col">
+    <SCCheckbox size="sm" label="I am a small Checkbox" className="mb-4" />
+    <SCCheckbox size="md" label="I am a regular Checkbox" className="mb-4" />
+    <SCCheckbox size="lg" label="I am a large Checkbox" className="mb-4" />
+  </div>
+</Story>
+
+
+
+### Playground
+
+Experiment with this story with Knobs addon in Canvas mode.
+
+<Story name="Playground" decorators={[withKnobs]}>
+    <SCCheckbox
+      value={boolean('value', false)}
+      disabled={boolean('disabled', false)}
+      label={text('label', 'Hello World')}
+      size={radios('size', { sm: 'sm', md: 'md', lg: 'lg'}, 'md')}
+      className={text('className', '')}
+    />
+</Story>

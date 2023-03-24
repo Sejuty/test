@@ -1,0 +1,57 @@
+.sc-switch {
+  width: 40px;
+  height: 16px;
+
+  @apply relative;
+  @apply inline-block;
+  @apply cursor-pointer;
+}
+
+.sc-switch.sc-switch-disabled {
+  @apply opacity-50;
+  @apply cursor-not-allowed;
+}
+
+.sc-switch .sc-switch-input {
+  @apply w-0;
+  @apply h-0;
+  @apply opacity-0;
+}
+
+.sc-switch .sc-switch-slider {
+  transition: 0.4s;
+  @apply bg-grey-light;
+  @apply absolute;
+  @apply cursor-pointer;
+  @apply top-0;
+  @apply left-0;
+  @apply right-0;
+  @apply bottom-0;
+  @apply rounded-full;
+}
+
+.sc-switch .sc-switch-slider:before {
+  content: '';
+  height: 21px;
+  width: 21px;
+  bottom: -3px;
+  transition: 0.4s;
+
+  @apply absolute;
+  @apply left-0;
+  @apply bg-primary-lighter;
+  @apply rounded-full;
+}
+
+.sc-switch .sc-switch-input:checked + .sc-switch-slider {
+  @apply bg-primary-lighter;
+}
+
+.sc-switch .sc-switch-input:checked + .sc-switch-slider:before {
+  @apply bg-primary-dark;
+  transform: translateX(20px);
+}
+
+.sc-switch.sc-switch-disabled .sc-switch-slider {
+  @apply cursor-not-allowed;
+}

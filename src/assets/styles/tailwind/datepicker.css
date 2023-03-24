@@ -1,0 +1,84 @@
+.sc-datepicker-container {
+    @apply flex;
+    @apply flex-col;
+}
+
+.sc-datepicker-container legend,
+.sc-datepicker-container label {
+    font-size: 14px;
+    line-height: 16px;
+
+    @apply text-grey-darker;
+    @apply capitalize;
+    @apply cursor-pointer;
+}
+
+.sc-datepicker-container hint {
+    font-size: 10px;
+    line-height: 12px;
+
+    @apply text-primary-light;
+    @apply pl-2;
+}
+
+.sc-datepicker-container .sc-datepicker-hint {
+    @apply text-primary-light;
+    @apply text-xs;
+}
+
+
+.sc-datepicker-container datepicker {
+    font-size: 12px;
+    line-height: 16px;
+    padding: 10px 5px;
+    margin: 8px 0px;
+
+    @apply w-full;
+    @apply border-b;
+    @apply border-grey-dark;
+    @apply text-black;
+}
+
+.sc-datepicker-container datepicker:focus {
+    @apply border-grey-darker;
+    @apply outline-none;
+}
+
+.sc-datepicker-container datepicker:read-only {
+    @apply cursor-not-allowed;
+    @apply bg-grey;
+}
+
+.sc-datepicker-container.sc-datepicker-error label,
+.sc-datepicker-container.sc-datepicker-error legend {
+    @apply text-red-light;
+}
+
+.sc-datepicker-container.sc-datepicker-error datepicker {
+    @apply text-red-light;
+    @apply border-red-light;
+}
+
+.sc-datepicker-container.sc-datepicker-error datepicker:read-only {
+    background: rgba(230, 106, 106, 0.2);
+}
+
+.sc-datepicker-container.sc-datepicker-error datepicker::placeholder {
+    @apply text-red-light;
+    @apply opacity-100;
+}
+
+.sc-datepicker-container.sc-datepicker-error .sc-datepicker-hint {
+    @apply text-red-light;
+}
+
+.react-datepicker__close-icon::after {
+    background-color: gray
+}
+
+/*Fix of a CSS bug in Datepicker*/
+/*https://stackoverflow.com/questions/63284785/react-datepicker-remove-coloring-of-same-day-in-other-months/63285080#63285080*/
+.react-datepicker__day.react-datepicker__day--keyboard-selected {
+    background: none;
+    color: black;
+}

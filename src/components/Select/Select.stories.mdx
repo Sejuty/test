@@ -1,0 +1,220 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, text, boolean, number, select, radios } from '@storybook/addon-knobs';
+
+import { SCSelect } from '../../components';
+
+<Meta title="Select" component={SCSelect} />
+
+# Select
+
+## Displays a select that will help users in taking an action. Use a button for enabling/disabling action to specific users
+
+## Basic Select (where multiple=false and searchable=false)
+<Preview withToolbar>
+  <Story name="Array of numbers options">
+    <div>
+      <SCSelect
+        title={'multiple = false and searchable = false'}
+        options={[1, 2, 3]}
+        value={''}
+        className="mb-2"
+      />
+      <SCSelect
+        title={'multiple = true and searchable = false'}
+        options={[1, 2, 3]}
+        value={[]}
+        multiple={true}
+        className="mb-2"
+      />
+      <SCSelect
+        title={'multiple = false and searchable = true'}
+        options={[1, 2, 3]}
+        value={[]}
+        searchable={true}
+        className="mb-2"
+      />
+      <SCSelect
+        title={'multiple = true and searchable = true'}
+        options={[1, 2, 3]}
+        value={[]}
+        searchable={true}
+        multiple={true}
+        className="mb-2"
+      />
+      <SCSelect
+        title={'multiple = false and searchable = false with preselected value'}
+        options={[1, 2, 3]}
+        value={1}
+        className="mb-2"
+      />
+      <SCSelect
+        title={'multiple = true and searchable = true with preselected values'}
+        options={[1, 2, 3]}
+        value={[1, 2]}
+        searchable={true}
+        multiple={true}
+        className="mb-2"
+      />
+    </div>
+  </Story>
+</Preview>
+
+### Dynamically set value of Checkbox
+<div className="p-4 bg-primary-dark text-grey text-sm rounded">this.someRefToInput.current.setValue(true);</div>
+
+<Props of={SCSelect} />
+
+## Displays a select with array objects option
+
+<Preview withToolbar>
+  <Story name="Array Of Object Options">
+    <div>
+      <SCSelect
+        title={'multiple = false and searchable = false'}
+        options={[{ id: 1, name: 'Chris Whithers' }, { id: 2, name: 'Shafiul Hasan' }, { id: 3, name: 'Shafqat Asif' }]}
+        trackBy="id"
+        label="name"
+        className="mb-2"
+      />
+      <SCSelect
+        title={'multiple = true and searchable = false'}
+        options={[{ id: 1, name: 'Chris Whithers' }, { id: 2, name: 'Shafiul Hasan' }, { id: 3, name: 'Shafqat Asif' }]}
+        trackBy="id"
+        label="name"
+        multiple={true}
+        className="mb-2"
+      />
+      <SCSelect
+        title={'multiple = false and searchable = true'}
+        options={[{ id: 1, name: 'Chris Whithers' }, { id: 2, name: 'Shafiul Hasan' }, { id: 3, name: 'Shafqat Asif' }]}
+        value={{}}
+        trackBy="id"
+        label="name"
+        searchable={true}
+        className="mb-2"
+      />
+      <SCSelect
+        title={'multiple = true and searchable = true'}
+        options={[{ id: 1, name: 'Chris Whithers' }, { id: 2, name: 'Shafiul Hasan' }, { id: 3, name: 'Shafqat Asif' }]}
+        trackBy="id"
+        label="name"
+        searchable={true}
+        multiple={true}
+        className="mb-2"
+      />
+      <SCSelect
+        title={'multiple = false and searchable = false with preselected value'}
+        options={[{ id: 1, name: 'Chris Whithers' }, { id: 2, name: 'Shafiul Hasan' }, { id: 3, name: 'Shafqat Asif' }]}
+        value={{ id: 1, name: 'Chris Whithers' }}
+        trackBy="id"
+        label="name"
+        className="mb-2"
+      />
+      <SCSelect
+        title={'multiple = true and searchable = true with preselected values'}
+        options={[{ id: 1, name: 'Chris Whithers' }, { id: 2, name: 'Shafiul Hasan' }, { id: 3, name: 'Shafqat Asif' }]}
+        value={[{ id: 1, name: 'Chris Whithers' }, { id: 2, name: 'Shafiul Hasan' }, { id: 3, name: 'Shafqat Asif' }]}
+        trackBy="id"
+        label="name"
+        searchable={true}
+        multiple={true}
+        className="mb-2"
+      />
+    </div>
+  </Story>
+</Preview>
+
+### Playground
+
+Experiment with this story with Knobs addon in Canvas mode.
+
+<Story name="Playground" decorators={[withKnobs]}>
+  <SCSelect
+    options={[5, 10, 20]}
+    label={text('label', 'Select Array')}
+    title={text('title', 'Our title')}
+    helpText={text('helpText', 'Our help text')}
+    placeholder={text('placeholder', 'This is an input placeholder')}
+    multiple={boolean('multiple', false)}
+    searchable={boolean('searchable', false)}
+    throttleTime={number('throttleTime', 300)}
+    className="mb-2"
+  />
+</Story>
+
+<Story name="Playground with different Selects">
+  <div>
+    (multiple = false, searchable = false, array of numbers)
+    <SCSelect
+      options={[1, 2, 3]}
+      value={''}
+      className="mb-4"
+    />
+    (multiple = true, searchable = false, array of numbers)
+    <SCSelect
+      options={[1, 2, 3]}
+      value={[]}
+      multiple={true}
+      className="mb-4"
+    />
+    (multiple = true, searchable = false, array of numbers with preselected values)
+    <SCSelect
+      options={[1, 2, 3]}
+      value={[1, 2]}
+      multiple={true}
+      className="mb-4"
+    />
+    (multiple = false, searchable = true, array of numbers)
+    <SCSelect
+      options={[1, 2, 3]}
+      searchable={true}
+      className="mb-4"
+    />
+    (multiple = true, searchable = true, array of numbers)
+    <SCSelect
+      options={[1, 2, 3]}
+      multiple={true}
+      searchable={true}
+      className="mb-4"
+    />
+    (multiple = false, searchable = true, array of objects with preselected value)
+    <SCSelect
+      options={[{ id: 1, name: 'Chris Whithers' }, { id: 2, name: 'Shafiul Hasan' }, { id: 3, name: 'Shafqat Asif' }]}
+      value={{ id: 1, name: 'Chris Whithers' }}
+      searchable={true}
+      trackBy="id"
+      label="name"
+      className="mb-2"
+    />
+    (multiple = true, searchable = true, array of objects)
+    <SCSelect
+      options={[{ id: 1, name: 'Chris Whithers' }, { id: 2, name: 'Shafiul Hasan' }, { id: 3, name: 'Shafqat Asif' }]}
+      multiple={true}
+      searchable={true}
+      value={[]}
+      trackBy="id"
+      label="name"
+      className="mb-4"
+    />
+    (multiple = true, searchable = true, array of objects with preselected values)
+    <SCSelect
+      options={[{ id: 1, name: 'Chris Whithers' }, { id: 2, name: 'Shafiul Hasan' }, { id: 3, name: 'Shafqat Asif' }]}
+      value={[{ id: 1, name: 'Chris Whithers' }, { id: 2, name: 'Shafiul Hasan' }, { id: 3, name: 'Shafqat Asif' }]}
+      multiple={true}
+      searchable={true}
+      trackBy="id"
+      label="name"
+      className="mb-4"
+    />
+    (multiple = true, searchable = false, array of objects with preselected values)
+    <SCSelect
+      options={[{ id: 1, name: 'Chris Whithers' }, { id: 2, name: 'Shafiul Hasan' }, { id: 3, name: 'Shafqat Asif' }]}
+      multiple={true}
+      value={[{ id: 1, name: 'Chris Whithers' }, { id: 2, name: 'Shafiul Hasan' }, { id: 3, name: 'Shafqat Asif' }]}
+      trackBy="id"
+      label="name"
+      className="mb-4"
+    />
+  </div>
+</Story>
+

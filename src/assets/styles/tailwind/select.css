@@ -1,0 +1,145 @@
+.sc-select-container {
+  min-width: 150px;
+  font-size: 14px;
+  line-height: 18px;
+  @apply w-full;
+  @apply flex;
+  @apply flex-col;
+  @apply relative;
+  @apply text-left;
+}
+.sc-select-container .sc-selector {
+  @apply bg-grey-light;
+  @apply text-black;
+  @apply w-full;
+  @apply relative;
+  @apply flex;
+  @apply justify-between;
+  @apply cursor-pointer;
+  @apply rounded;
+  height: 36px;
+}
+.sc-select-container .sc-selector .sc-select-dropdown-icon {
+  @apply flex;
+  @apply items-center;
+  @apply justify-center;
+  @apply text-3xl;
+  height: 36px;
+  margin-top: 2px;
+}
+.sc-select-placeholder {
+  @apply flex;
+  @apply flex-1;
+  @apply h-full;
+  @apply items-center;
+  @apply pl-4;
+  @apply flex-wrap;
+  @apply overflow-hidden;
+  overflow: hidden;
+}
+.sc-select-placeholder span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+  pointer-events: none;
+}
+.sc-selected-item {
+  height: 24px;
+  @apply rounded;
+  @apply pl-4;
+  @apply pr-2;
+  @apply mr-4;
+  @apply mt-1;
+  @apply flex;
+  @apply justify-between;
+  @apply items-center;
+  @apply bg-primary;
+  @apply text-white;
+  @apply border;
+  @apply border-primary;
+  max-width: 85%;
+}
+.sc-selected-item span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sc-selected-item:hover {
+  @apply text-red;
+  @apply bg-white;
+  @apply border;
+  @apply border-red;
+}
+.sc-selected-item .sc-selected-close-icon {
+  @apply flex;
+  @apply ml-2;
+  @apply items-center;
+  @apply justify-center;
+  @apply text-xl;
+  padding-top: 2px;
+}
+.sc-select-container .sc-select-search {
+  height: 36px;
+  @apply bg-grey-light;
+  @apply text-black;
+  @apply w-full;
+  @apply pl-4;
+}
+.sc-select-container .sc-select-search:focus {
+  @apply outline-none;
+}
+.sc-empty-text {
+  @apply text-center;
+  @apply py-2;
+  @apply text-lg;
+  @apply text-black;
+}
+.sc-select-search-wrapper {
+  @apply flex-1;
+}
+.sc-select-container .sc-select-dropdown {
+  @apply absolute;
+  @apply w-full;
+  @apply bg-grey-light;
+  @apply flex;
+  @apply flex-col;
+  @apply overflow-y-scroll;
+  @apply z-50;
+  @apply mt-1;
+  @apply rounded;
+  max-height: 250px;
+}
+.sc-select-container .sc-select-title {
+  @apply mb-2;
+  @apply capitalize;
+  @apply text-grey-darker;
+  font-size: 12px;
+  line-height: 14px;
+}
+.sc-select-container .sc-select-dropdown .sc-select-dropdown-item {
+  @apply flex;
+  @apply px-4;
+  @apply py-2;
+  @apply cursor-pointer;
+  @apply text-black;
+}
+.sc-select-container .sc-select-dropdown .sc-select-dropdown-item span {
+  @apply flex-1;
+}
+.sc-select-container .sc-select-dropdown .sc-select-dropdown-item:hover {
+  @apply bg-primary;
+  @apply text-white;
+}
+.sc-select-container
+  .sc-select-dropdown
+  .sc-select-dropdown-item.sc-select-dropdown-item-selected:hover {
+  @apply bg-red;
+  @apply text-white;
+}
+.sc-select-container
+  .sc-select-dropdown
+  .sc-select-dropdown-item.sc-select-dropdown-item-selected
+  i {
+  @apply ml-2;
+}

@@ -1,0 +1,50 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, text, boolean, number, select, radios } from '@storybook/addon-knobs';
+import { SCTooltip, SCButton } from '../../components';
+
+<Meta title="Tooltip" component={SCTooltip} />
+
+# Tooltip
+
+## Displays a tooltip that will help users in taking an action.
+
+<Props of={SCTooltip} />
+
+<Preview withToolbar>
+    <Story name="Basic">
+        <>
+            <SCTooltip id='basic-hover' content="Lorem ipsum" position="top" trigger="hover">
+                <SCButton label="Hover"/>
+            </SCTooltip>
+            <SCTooltip id='basic-click' content="Lorem ipsum" position="top" trigger="click">
+                <SCButton className="ml-3" label="Click"/>
+            </SCTooltip>
+        </>
+    </Story>
+</Preview>
+
+<Story name="Escaping overflow-hidden">
+    <div class="overflow-hidden border p-5">
+        <SCTooltip id='escaping-overflow-hidden' content="Lorem ipsum" position="top" trigger="hover">
+            <SCButton label="Hover"/>
+        </SCTooltip>
+    </div>
+</Story>
+
+<Story name="Escaping overflow-auto">
+    <div class="flex">
+        <div class="overflow-auto border p-5 mt-3">
+            <SCTooltip id='escaping-overflow-auto' content="Lorem ipsum" position="top" trigger="hover">
+                <SCButton label="Hover"/>
+            </SCTooltip>
+        </div>
+    </div>
+</Story>
+
+<Story name="Escaping Flexbox with Overflow">
+    <div class="flex relative items-center justify-between border mt-3 p-3">
+        <SCTooltip id='escaping-overflow-auto' content="Lorem ipsum" position="top" trigger="hover">
+            <SCButton label="Hover"/>
+        </SCTooltip>
+    </div>
+</Story>

@@ -1,0 +1,73 @@
+.sc-timepicker {
+  @apply w-full;
+  @apply flex;
+  @apply flex-col;
+  @apply bg-grey-light;
+  @apply relative;
+  @apply rounded;
+
+  height: 36px;
+  line-height: 36px;
+}
+
+.sc-timepicker .sc-timepicker-label {
+  @apply text-center;
+  @apply bg-grey-light;
+  @apply text-black;
+  @apply cursor-pointer;
+  @apply rounded;
+}
+
+.sc-timepicker .sc-timepicker-dropdown {
+  @apply flex;
+  @apply w-full;
+  @apply absolute;
+  @apply bg-grey-light;
+  @apply text-black;
+  @apply z-10;
+  @apply mt-1;
+  @apply rounded;
+  height: 19rem;
+
+  top: 36px;
+}
+
+.sc-timepicker .sc-timepicker-dropdown .hour-half {
+  @apply w-1/2;
+  @apply border-r-2;
+  @apply border-white;
+  @apply overflow-y-scroll;
+}
+
+.sc-timepicker .sc-timepicker-dropdown .minute-half {
+  @apply w-1/2;
+  @apply overflow-y-scroll;
+}
+
+.sc-timepicker .sc-timepicker-dropdown .sc-timepicker-dropdown-row {
+  @apply px-4;
+  @apply text-base;
+  @apply cursor-pointer;
+}
+
+.sc-timepicker
+  .sc-timepicker-dropdown
+  .sc-timepicker-dropdown-row.sc-timepicker-dropdown-row__selected,
+.sc-timepicker .sc-timepicker-dropdown .sc-timepicker-dropdown-row:hover {
+  @apply bg-primary;
+  @apply text-white;
+}
+
+.sc-timepicker
+  .sc-timepicker-dropdown
+  .hour-half
+  .sc-timepicker-dropdown-row__selected.sc-timepicker-dropdown-row:first-child {
+  border-top-left-radius: 4px;
+}
+
+.sc-timepicker
+  .sc-timepicker-dropdown
+  .minute-half
+  .sc-timepicker-dropdown-row__selected.sc-timepicker-dropdown-row:first-child {
+  border-top-right-radius: 4px;
+}

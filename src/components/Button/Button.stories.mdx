@@ -1,0 +1,84 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, text, boolean, select, radios } from '@storybook/addon-knobs';
+
+import { SCButton } from '../../components';
+
+<Meta title="Button" component={SCButton} />
+
+# Button
+
+## Displays a button that will help users in taking an action. Use a button for attributing actions to specific users
+
+<Preview withToolbar>
+    <Story name="Basic">
+        <SCButton
+            label="Shadow Chef"
+            variant="success"
+            size="xl"
+            className="rounded"
+        />
+    </Story>
+</Preview>
+
+<Props of={SCButton} />
+
+
+### Size
+
+5 sizes are supported: `sm`, `md`, `lg`, `xl`, `auto`
+
+<Story name="Size">
+  <div>
+    <SCButton size="auto" label="Auto" className="mr-4 mb-4" />
+    <SCButton size="sm" label="SM" className="mr-4 mb-4" />
+    <SCButton size="md" label="MD" className="mr-4 mb-4" />
+    <SCButton size="lg" label="LG" className="mr-4 mb-4" />
+    <SCButton size="xl" label="XL" />
+  </div>
+</Story>
+
+
+### Variant
+
+6 variants are supported: `primary`, `primary-outline`, `success`, `success-outline`, `danger`, `danger-outline`
+
+<Story name="Variant">
+  <div>
+    <SCButton size="lg" variant="primary" label="Primary" className="mr-4 mb-4" />
+    <SCButton size="lg" variant="primary-outline" label="Primary Outline" className="mr-4 mb-4" />
+    <SCButton size="lg" variant="success" label="Success" className="mr-4 mb-4" />
+    <SCButton size="lg" variant="success-outline" label="Success Outline" className="mr-4 mb-4" />
+    <SCButton size="lg" variant="danger" label="Danger" className="mr-4 mb-4" />
+    <SCButton size="lg" variant="danger-outline" label="Danger Outline" className="mr-4 mb-4" />
+  </div>
+</Story>
+
+### Button Content in Slot
+
+Texts/icons can be slotted in as Button content
+
+<Preview withToolbar>
+    <Story name="Button Content in Slot">
+        <div>
+            <SCButton size="lg" variant="primary" className="mb-4">
+                <i className="icon-done-outline text-sm" />
+                <span className="ml-2">Approve</span>
+            </SCButton>
+        </div>
+    </Story>
+</Preview>
+
+
+### Playground
+
+Experiment with this story with Knobs addon in Canvas mode.
+
+<Story name="Playground" decorators={[withKnobs]}>
+    <SCButton
+        disabled={boolean('disabled', false)}
+        label={text('label', 'Hello')}
+        variant={select('variant', ['primary', 'primary-outline', 'success', 'success-outline', 'danger', 'danger-outline'], 'primary')}
+        size={radios('size', { auto: 'auto', sm: 'sm', md: 'md', lg: 'lg', xl: 'xl'}, 'md')}
+        className={text('className', '')}
+    />
+</Story>

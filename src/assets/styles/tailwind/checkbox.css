@@ -1,0 +1,73 @@
+.sc-checkbox-container {
+    @apply flex;
+    @apply cursor-pointer;
+    @apply select-none;
+    @apply text-black;
+}
+
+.sc-checkbox-container.sc-checkbox-disabled {
+    @apply cursor-not-allowed;
+    @apply opacity-50;
+}
+
+.sc-checkbox-container .sc-checkbox-label {
+    @apply flex;
+    @apply items-center;
+    @apply uppercase;
+}
+
+.sc-checkbox-container .sc-checkbox {
+    @apply bg-grey-light;
+    @apply relative;
+    @apply mr-2;
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+}
+
+.sc-checkbox-container .sc-checkbox .checkmark {
+    @apply flex;
+    @apply text-primary;
+}
+
+.sc-checkbox-container.sc-checkbox-sm .sc-checkbox {
+    width: 17px;
+    height: 17px;
+}
+
+.sc-checkbox-container.sc-checkbox-sm .sc-checkbox-label {
+    font-size: 12px;
+    line-height: 17px;
+}
+
+.sc-checkbox-container.sc-checkbox-md .sc-checkbox {
+    width: 20px;
+    height: 20px;
+}
+
+.sc-checkbox-container.sc-checkbox-md .sc-checkbox-label {
+    font-size: 13.5px;
+    line-height: 20px;
+}
+
+.sc-checkbox-container.sc-checkbox-lg .sc-checkbox {
+    width: 24px;
+    height: 24px;
+}
+
+.sc-checkbox-container.sc-checkbox-lg .sc-checkbox-label {
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.sc-checkbox-container.sc-checkbox-sm .sc-checkbox .checkmark {
+    font-size: 13px;
+}
+
+.sc-checkbox-container.sc-checkbox-md .sc-checkbox .checkmark {
+    font-size: 16px;
+}
+
+.sc-checkbox-container.sc-checkbox-lg .sc-checkbox .checkmark {
+    font-size: 20px;
+}

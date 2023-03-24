@@ -1,0 +1,146 @@
+.sc-modal {
+  @apply z-50;
+  @apply fixed;
+  @apply left-0;
+  @apply top-0;
+  @apply w-screen;
+  @apply h-screen;
+  @apply overflow-auto;
+}
+
+.sc-modal.sc-modal-white,
+.sc-modal.sc-modal-grey {
+  background-color: rgba(0, 0, 0, 0.76);
+}
+
+.sc-modal.sc-modal-black {
+  background-color: rgba(255, 255, 255, 0.76);
+}
+
+.sc-modal.sc-modal-visible {
+  @apply flex;
+  @apply flex-col;
+}
+
+.sc-modal.sc-modal-hidden {
+  @apply hidden;
+}
+
+.sc-modal-content {
+  @apply m-auto;
+  @apply relative;
+  @apply outline-none;
+  @apply uppercase;
+  @apply rounded;
+
+  width: 600px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.sc-modal.sc-modal-black .sc-modal-content {
+  @apply bg-primary-darker;
+  @apply text-grey;
+}
+
+.sc-modal.sc-modal-white .sc-modal-content {
+  @apply bg-white;
+  @apply text-grey-darker;
+}
+
+.sc-modal.sc-modal-grey .sc-modal-content {
+  @apply bg-grey-dark;
+  @apply text-primary;
+}
+
+.sc-modal-content .sc-modal-header {
+  @apply flex;
+  @apply items-center;
+  @apply border-b;
+  @apply border-grey;
+}
+
+.sc-modal-content .sc-modal-header .sc-modal-close {
+  @apply flex;
+  @apply items-center;
+  @apply justify-center;
+  @apply leading-none;
+  @apply text-xl;
+  @apply px-3;
+  @apply pt-1;
+  @apply cursor-pointer;
+  @apply h-8;
+}
+
+.sc-modal-content .sc-modal-header .sc-modal-close:hover {
+  @apply bg-red;
+  @apply text-grey;
+}
+
+.sc-modal-content .sc-modal-header .sc-modal-header-content {
+  @apply flex;
+  @apply flex-1;
+  @apply items-center;
+  @apply px-2;
+  @apply h-8;
+}
+
+.sc-modal-content .sc-modal-body {
+  @apply flex;
+  @apply flex-col;
+  @apply p-4;
+}
+
+.sc-modal-animate-fade {
+  animation: sc-modal-fade 1s;
+}
+@keyframes sc-modal-fade {
+  from {
+    @apply opacity-0;
+  }
+  to {
+    @apply opacity-100;
+  }
+}
+
+.sc-modal-animate-top {
+  @apply relative;
+  animation: sc-modal-top 0.3s;
+}
+@keyframes sc-modal-top {
+  from {
+    top: -20vh;
+    @apply opacity-0;
+  }
+  to {
+    @apply top-0;
+    @apply opacity-100;
+  }
+}
+
+.sc-modal-animate-bottom {
+  @apply relative;
+  animation: sc-modal-bottom 0.3s;
+}
+@keyframes sc-modal-bottom {
+  from {
+    bottom: -20vh;
+    @apply opacity-0;
+  }
+  to {
+    @apply bottom-0;
+    @apply opacity-100;
+  }
+}
+
+.sc-modal-animate-zoom {
+  animation: sc-modal-zoom 0.3s;
+}
+@keyframes sc-modal-zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}

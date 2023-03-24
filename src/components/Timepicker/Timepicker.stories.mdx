@@ -1,0 +1,37 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, text, boolean, number, select, radios } from '@storybook/addon-knobs';
+
+import { SCTimepicker } from '../../components';
+
+<Meta title="Timepicker" component={SCTimepicker} />
+
+# Timepicker
+
+## Displays a Timepicker that will help users in taking an action.
+
+<Preview withToolbar>
+    <Story name="Basic">
+        <div className="flex w-64">
+            <SCTimepicker />
+        </div>
+    </Story>
+</Preview>
+
+<Props of={SCTimepicker} />
+
+### Playground
+
+Experiment with this story with Knobs addon in Canvas mode.
+
+<Story name="Playground" decorators={[withKnobs]}>
+    <div className="flex flex-col">
+        <SCTimepicker
+            value={number('value', 1000)}
+            minuteStep={select('minuteStep', [1, 5, 10, 15, 20, 30], 10)}
+            hourStart={number('hourStart', 6, { min: 0, max: 23 })}
+            hourEnd={number('hourEnd', 22, { min: 0, max: 23 })}
+        />
+        <div className="mt-4">Some text</div>
+    </div>
+    
+</Story>

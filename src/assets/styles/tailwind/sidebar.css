@@ -1,0 +1,100 @@
+.sc-sidebar {
+  overflow: hidden;
+  transition: width 300ms linear;
+  background: linear-gradient(180deg, #5157eb 0%, #172b4d 100%);
+
+  @apply flex;
+  @apply flex-col;
+}
+
+.sc-sidebar:hover {
+  overflow: visible;
+}
+
+.sc-sidebar .sc-sidebar-item {
+  height: 42px;
+  font-size: 14px;
+  line-height: 18px;
+  transition: padding 0.35s ease 0s;
+  width: 90%;
+
+  @apply text-white;
+  @apply flex;
+  @apply capitalize;
+  @apply items-center;
+  @apply cursor-pointer;
+  @apply relative;
+  @apply rounded-r;
+}
+
+.sc-sidebar .sc-sidebar-item:hover {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+
+  @apply text-primary;
+  @apply bg-white;
+}
+
+.sc-sidebar .sc-sidebar-item .sc-sidebar-item-icon {
+  font-size: 18px;
+  line-height: 24px;
+  transition: transform 0.03s linear;
+  margin: 0 15px 0 15px;
+
+  @apply w-4;
+}
+
+.sc-sidebar.sc-hide-sidebar-content .sc-sidebar-tittle,
+.sc-sidebar.sc-hide-sidebar-content .sc-sidebar-dropdown-icon,
+.sc-sidebar.sc-hide-sidebar-content .sc-dropdown {
+  display: none;
+}
+
+.sc-sidebar .sc-sidebar-tittle {
+  flex: 0 1 auto;
+
+  @apply capitalize;
+}
+
+.sc-sidebar .sc-dropdown {
+  @apply hidden;
+}
+.sc-sidebar .sc-dropdown.show {
+  @apply block;
+}
+.sc-sidebar .sc-dropdown-first-level {
+  @apply flex;
+  @apply flex-1;
+  @apply pl-4;
+}
+.sc-sidebar .sc-dropdown-second-level {
+  @apply pl-8;
+}
+
+.sc-sidebar-pin {
+  flex: 0 0 auto;
+
+  @apply bg-primary-lighter;
+  @apply relative;
+  @apply w-4;
+  @apply h-4;
+  @apply rounded-full;
+}
+
+.sc-sidebar .sc-pinable::after {
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+
+  @apply bg-primary-light;
+}
+
+.sc-sidebar .sc-sidebar-header {
+  @apply flex;
+  @apply justify-between;
+}

@@ -1,0 +1,56 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, text, boolean, radios } from '@storybook/addon-knobs';
+
+import { SCSwitch } from '../../components';
+
+<Meta title="Switch" component={SCSwitch} />
+
+# Switch
+
+## Displays a switch that will help users in taking an action. Use a button for enabling/disabling action to specific users
+
+<Props of={SCSwitch} />
+
+<Preview withToolbar>
+    <Story name="Basic">
+        <SCSwitch
+            label="Shadow Chef"
+            variant="success"
+            size="xl"
+            className="rounded"
+        />
+    </Story>
+</Preview>
+
+
+## Dynamically Set the Value of Checkbox
+<div className="p-4 bg-primary-dark text-grey text-sm rounded">this.someRefToSwitch.current.setValue(true);</div>
+
+## Show Tooltip with Custom Message for Disabled Switches
+
+<Preview>
+    <Story name="Tooltip">
+        <SCSwitch
+            label="Shadow Chef"
+            variant="success"
+            size="xl"
+            className="rounded"
+            disabled
+            disabledMessage="Lorem Ipsum"
+            disabledTooltipId="disabled-tooltip"
+        />
+    </Story>
+</Preview>
+
+## Playground
+
+Experiment with this story with Knobs addon in Canvas mode.
+
+<Story name="Playground" decorators={[withKnobs]}>
+    <SCSwitch
+        disabled={boolean('disabled', false)}
+        trueValue={text('trueValue', 'On')}
+        falseValue={text('falseValue', 'Off')}
+        className={text('className', '')}
+    />
+</Story>
